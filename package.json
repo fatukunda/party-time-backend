@@ -11,7 +11,10 @@
 		"test": "env-cmd -f ./config/test.env mocha --require @babel/register src/test/*.js"
 	},
 	"dependencies": {
-		"express": "^4.17.1"
+		"express": "^4.17.1",
+		"pg": "^7.12.1",
+		"pg-hstore": "^2.3.3",
+		"sequelize": "^5.15.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.5.5",
