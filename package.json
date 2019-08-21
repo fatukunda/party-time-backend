@@ -1,0 +1,31 @@
+{
+	"name": "party-time-backend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/fatukunda/party-time-backend.git",
+	"author": "Frank Atukunda <fatukunda@gmail.com Michael Kibuuka <awesomeme155@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "node src/index.js",
+		"dev": "env-cmd -f ./config/dev.env nodemon src/index.js --exec babel-node src/index.js",
+		"test": "env-cmd -f ./config/test.env mocha --require @babel/register src/test/*.js"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.5.5",
+		"@babel/node": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@babel/register": "^6.26.0",
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
+		"env-cmd": "^9.0.3",
+		"eslint": "^6.2.1",
+		"eslint-config-airbnb-base": "^14.0.0",
+		"eslint-plugin-import": "^2.18.2",
+		"mocha": "^6.2.0",
+		"nodemon": "^1.19.1",
+		"request": "^2.88.0"
+	}
+}
