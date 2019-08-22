@@ -6,9 +6,9 @@
 	"author": "Frank Atukunda <fatukunda@gmail.com Michael Kibuuka <awesomeme155@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"start": "node src/index.js",
-		"dev": "env-cmd -f ./config/dev.env nodemon src/index.js --exec babel-node src/index.js",
-		"test": "env-cmd -f ./config/test.env nyc --reporter=html --reporter=text mocha --require @babel/register src/test/*.js",
+		"start": "NODE_ENV=production babel-node src/index.js",
+		"dev": "NODE_ENV=development env-cmd -f ./config/dev.env nodemon src/index.js --exec babel-node src/index.js",
+		"test":"env-cmd -f ./config/test.env nyc --reporter=html --reporter=text mocha --require @babel/register src/test/*.js",
 		"travis": "nyc --reporter=lcov --reporter=text mocha --require @babel/register src/test/*.js"
 	},
 	"dependencies": {
@@ -16,12 +16,12 @@
 		"nyc": "^14.1.1",
 		"pg": "^7.12.1",
 		"pg-hstore": "^2.3.3",
-		"sequelize": "^5.15.2"
+		"sequelize": "^5.15.2",
+		"@babel/node": "^7.5.5",
+		"@babel/preset-env": "^7.5.5"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.5.5",
-		"@babel/node": "^7.5.5",
-		"@babel/preset-env": "^7.5.5",
 		"@babel/register": "^7.5.5",
 		"chai": "^4.2.0",
 		"chai-http": "^4.3.0",
