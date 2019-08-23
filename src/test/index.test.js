@@ -1,8 +1,14 @@
-import { expect } from 'chai';
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import server from '../server';
 
-describe('Welcome to API', () => {
-  it('Server running', (done) => {
-    expect(false).to.be.equal(false);
+const { expect } = chai;
+chai.use(chaiHttp);
+describe('Server connection', () => {
+  it('should successfully run the server', (done) => {
+    chai.request(server).get('/').end((err, res) => {
+      expect(res).to.have.status(200);
+    });
     done();
   });
 });
