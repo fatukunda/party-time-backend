@@ -1,12 +1,11 @@
 import express from 'express';
 import dbConnection from './database';
+import indexRouter from './routes/index';
 
 const app = express();
 dbConnection();
 app.use(express.json());
+app.use(indexRouter);
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the Party API.');
-});
 
-module.exports = app;
+export default app;

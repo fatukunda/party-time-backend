@@ -5,8 +5,8 @@ const dbConnection = () => new Sequelize(
   process.env.DATABASE_USER,
   process.env.DATABASE_PASSWORD,
   {
-    host: 'localhost',
-    port: 5432,
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
     dialect: 'postgres',
   },
 ).authenticate()
